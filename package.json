@@ -1,0 +1,14 @@
+{
+  "name": "doi",
+  "version": "0.0.1",
+  "main": "index.js",
+  "scripts": {
+    "start": "node_modules/electron-prebuilt/dist/Electron.app/Contents/MacOS/Electron ."
+  },
+  "engines": {
+    "node": ">=4"
+  },
+  "devDependencies": {
+    "electron-prebuilt": "^0.33.0"
+  }
+}
