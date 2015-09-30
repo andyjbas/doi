@@ -6,7 +6,12 @@ const app = require('app'),
       path = require('path'),
       shell = require('shell');
 
+var ipc = require('ipc');
 let mainWindow;
+
+ipc.on('setBadge', function(event, arg) {
+  app.dock.setBadge(arg);
+});
 
 app.on('ready', () => {
   mainWindow = new BrowserWindow({
@@ -14,7 +19,12 @@ app.on('ready', () => {
     height: 600,
     'min-width': 600,
     'min-height': 500,
-    show: false
+    show: false,
+    'web-preferences': {
+      'node-integration': false,
+      'preload': path.join(__dirname, 'browser.js'),
+      'web-security': false
+    }
   });
 
   let page = mainWindow.webContents;
@@ -34,4 +44,5 @@ app.on('ready', () => {
   });
 
   mainWindow.loadUrl('https://inbox.google.com');
+  mainWindow.openDevTools();
 });
