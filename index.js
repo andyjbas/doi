@@ -15,10 +15,12 @@ ipc.on('setBadge', function(event, arg) {
 
 app.on('ready', () => {
   mainWindow = new BrowserWindow({
+    title: 'Doi',
     width: 800,
     height: 600,
     'min-width': 600,
     'min-height': 500,
+    'icon': path.join(__dirname, 'icon.png'),
     show: false,
     'web-preferences': {
       'node-integration': false,
@@ -30,7 +32,7 @@ app.on('ready', () => {
   let page = mainWindow.webContents;
 
   page.on('dom-ready', () => {
-    page.insertCSS(fs.readFileSync(path.join(__dirname, 'style.css'), 'utf8'));
+    page.insertCSS(fs.readFileSync(path.join(__dirname, 'style/app.css'), 'utf8'));
     mainWindow.show();
   });
 
