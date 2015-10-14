@@ -1,14 +1,52 @@
 {
   "name": "doi",
+  "productName": "Doi",
+  "description": "An OS X wrapper for Google Inbox with desktop notification support.",
   "version": "0.0.1",
-  "main": "index.js",
-  "scripts": {
-    "start": "node_modules/electron-prebuilt/dist/Electron.app/Contents/MacOS/Electron ."
+  "license": "MIT",
+  "keywords": [
+    "email",
+    "google inbox",
+    "electron"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/andyjbas/doi.git"
   },
+  "bugs": {
+    "url": "https://github.com/andyjbas/doi/issues"
+  },
+  "author": "Andy Bas <code@andybas.com>",
+  "main": "index.js",
+  "electronVersion": "0.33.0",
+  "scripts": {
+    "start": "node_modules/electron-prebuilt/dist/Electron.app/Contents/MacOS/Electron .",
+    "test": "node_modules/electron-prebuilt/dist/Electron.app/Contents/MacOS/Electron ./test/",
+    "build": "electron-packager ./ $npm_package_productName --platform=darwin --arch=x64 --version=$npm_package_electronVersion --app-version=$npm_package_version --icon=media/icon.icns --ignore=test --ignore=media --ignore=dist --prune --out=dist --overwrite"
+  },
+  "files": [
+    "index.js",
+    "browser.js",
+    "style",
+    "media",
+    "test"
+  ],
   "engines": {
     "node": ">=4"
   },
   "devDependencies": {
-    "electron-prebuilt": "^0.33.0"
+    "chai": "^3.3.0",
+    "electron-packager": "^5.1.0",
+    "electron-prebuilt": "$npm_package_electronVersion",
+    "mocha": "^2.3.3",
+    "sinon": "^1.17.1",
+    "sinon-chai": "^2.8.0",
+    "walkdir": "0.0.10",
+    "xmlbuilder": "^3.1.0"
+  },
+  "dependencies": {
+    "bluebird": "^2.10.2",
+    "jquery": "^2.1.4",
+    "lodash": "^3.10.1"
   }
 }
