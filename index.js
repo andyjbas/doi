@@ -2,11 +2,11 @@
 
 const app = require('app'),
       BrowserWindow = require('browser-window'),
+      ipc = require('ipc'),
       fs = require('fs'),
       path = require('path'),
       shell = require('shell');
 
-var ipc = require('ipc');
 let mainWindow;
 
 ipc.on('setBadge', function(event, arg) {
@@ -15,13 +15,11 @@ ipc.on('setBadge', function(event, arg) {
 
 app.on('ready', () => {
   mainWindow = new BrowserWindow({
-    title: 'Doi',
-    width: 800,
-    height: 600,
+    'width': 800,
+    'height': 600,
     'min-width': 600,
     'min-height': 500,
-    'icon': path.join(__dirname, 'icon.png'),
-    show: false,
+    'show': false,
     'web-preferences': {
       'node-integration': false,
       'preload': path.join(__dirname, 'browser.js'),
@@ -41,10 +39,5 @@ app.on('ready', () => {
     shell.openExternal(url);
   });
 
-  mainWindow.on('closed', function() {
-    // TODO
-  });
-
   mainWindow.loadUrl('https://inbox.google.com');
-  mainWindow.openDevTools();
 });
