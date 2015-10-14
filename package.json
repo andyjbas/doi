@@ -21,7 +21,7 @@
   "electronVersion": "0.33.0",
   "scripts": {
     "start": "node_modules/electron-prebuilt/dist/Electron.app/Contents/MacOS/Electron .",
-    "test": "node_modules/electron-prebuilt/dist/Electron.app/Contents/MacOS/Electron ./test/renderer/",
+    "test": "node_modules/electron-prebuilt/dist/Electron.app/Contents/MacOS/Electron ./test/",
     "build": "electron-packager ./ $npm_package_productName --platform=darwin --arch=x64 --version=$npm_package_electronVersion --app-version=$npm_package_version --icon=media/icon.icns --ignore=test --ignore=media --ignore=dist --prune --out=dist --overwrite"
   },
   "files": [
@@ -40,7 +40,9 @@
     "electron-prebuilt": "$npm_package_electronVersion",
     "mocha": "^2.3.3",
     "sinon": "^1.17.1",
-    "walkdir": "0.0.10"
+    "sinon-chai": "^2.8.0",
+    "walkdir": "0.0.10",
+    "xmlbuilder": "^3.1.0"
   },
   "dependencies": {
     "bluebird": "^2.10.2",
