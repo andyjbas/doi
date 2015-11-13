@@ -163,7 +163,7 @@ describe('Notifications', () => {
       stubGmailFeed([]);
 
       remoteIpc.once('setBadge', (event, data) => {
-        expect(data).to.eq('.');
+        expect(data).to.eq('\u2022');
         done();
       });
 
