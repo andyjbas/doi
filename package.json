@@ -1,6 +1,5 @@
 {
   "name": "doi",
-  "productName": "Doi",
   "description": "An OS X wrapper for Google Inbox with desktop notification support.",
   "version": "0.0.1",
   "license": "MIT",
@@ -18,11 +17,11 @@
   },
   "author": "Andy Bas <code@andybas.com>",
   "main": "index.js",
-  "electronVersion": "0.34.3",
   "scripts": {
     "start": "node_modules/electron-prebuilt/dist/Electron.app/Contents/MacOS/Electron .",
     "test": "node_modules/electron-prebuilt/dist/Electron.app/Contents/MacOS/Electron ./test/",
-    "build": "electron-packager ./ $npm_package_productName --platform=darwin --arch=x64 --version=0.34.3 --app-version=$npm_package_version --icon=media/icon.icns --ignore=test --ignore=media --ignore=dist --prune --out=dist --overwrite"
+    "build": "electron-packager ./ Doi --platform=darwin --arch=x64 --version=0.34.3 --app-version=0.0.1 --prune --icon=media/icon.icns --ignore=test --ignore=media --ignore=dist --ignore=node_modules/.bin --out=dist --overwrite",
+    "pack": "npm run build && electron-builder \"/dist/Doi-darwin-x64/Doi.app\" --platform=osx --out=dist/Doi-darwin-x64 --config=packager.json"
   },
   "files": [
     "index.js",
@@ -36,6 +35,7 @@
   },
   "devDependencies": {
     "chai": "^3.3.0",
+    "electron-builder": "^2.1.1",
     "electron-packager": "^5.1.0",
     "electron-prebuilt": "0.34.3",
     "mocha": "^2.3.3",
