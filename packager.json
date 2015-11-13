@@ -5,8 +5,8 @@
     "icon": "media/icon.icns",
     "icon-size": 80,
     "contents": [
-      { "x": 346, "y": 100, "type": "link", "path": "/Applications" },
-      { "x": 100, "y": 100, "type": "file" }
+      {"x": 346, "y": 100, "type": "link", "path": "/Applications"},
+      {"x": 100, "y": 100, "type": "file"}
     ]
   }
 }

@@ -457,11 +457,6 @@
       "from": "jade@0.26.3",
       "resolved": "https://registry.npmjs.org/jade/-/jade-0.26.3.tgz"
     },
-    "jquery": {
-      "version": "2.1.4",
-      "from": "jquery@>=2.1.4 <3.0.0",
-      "resolved": "https://registry.npmjs.org/jquery/-/jquery-2.1.4.tgz"
-    },
     "json-stringify-safe": {
       "version": "5.0.1",
       "from": "json-stringify-safe@>=5.0.1 <5.1.0",

@@ -1,16 +1,6 @@
 # Doi
 
-A simple [Electron](http://electron.atom.io/) wrapper for [Inbox by Gmail](http://www.google.com/inbox).
-
-## TODO
-
-- [ ] Proper dock icon for non-empty inbox state (see Slack)
-- [ ] Crash, freeze event handling
-- [ ] CI support for tests
-- [ ] Standard menu actions
-- [ ] Preferences for notifications
-- [ ] menu links to external account settings
-- [ ] logout menu link
+A simple [Electron](http://electron.atom.io/) wrapper for [Inbox by Gmail](http://www.google.com/inbox) with desktop notification support.
 
 ## Install and Run
 
@@ -23,4 +13,4 @@ A simple [Electron](http://electron.atom.io/) wrapper for [Inbox by Gmail](http:
 
 ## Build for OS X
 
-* ` npm run build`
+* ` npm run build` or to generate a `dmg`, `npm run pack`
