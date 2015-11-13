@@ -5,6 +5,8 @@ const app = require('app'),
       ipc = require('ipc'),
       fs = require('fs'),
       path = require('path'),
+      Menu = require('menu'),
+      appMenu = require('./menu'),
       shell = require('shell');
 
 let mainWindow;
@@ -14,6 +16,8 @@ ipc.on('setBadge', function(event, arg) {
 });
 
 app.on('ready', () => {
+  Menu.setApplicationMenu(appMenu);
+
   mainWindow = new BrowserWindow({
     'width': 800,
     'height': 600,
